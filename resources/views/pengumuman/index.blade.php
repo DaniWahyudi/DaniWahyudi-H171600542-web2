@@ -22,7 +22,12 @@
 	<td>{!! $item->isi !!}</td>
 	<td>{!! $item->users_id !!}</td>
 	<td>
-		<a href="{!! route('pengumuman.show',[$item->id])!!}" class="btn btn-sm btn-success">lihat </a></td>
+		<a href="{!! route('pengumuman.show',[$item->id])!!}" class="btn btn-sm btn-success">lihat </a>
+		<a href="{!! route('pengumuman.edit',[$item->id])!!}" class="btn btn-sm btn-danger">ubah</a>
+		{!! Form::open(['route'=>['pengumuman.destroy',$item->id],'method'=>'delete']) !!}
+		{!! Form::submit('Hapus',['class'=>"btn btn-sm btn-warning"]); !!}
+		{!! Form::close() !!}
+		</td>
 </tr>
 @endforeach
 	</table>

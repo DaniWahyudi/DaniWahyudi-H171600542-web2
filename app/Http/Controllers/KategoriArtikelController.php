@@ -24,4 +24,25 @@ class KategoriArtikelController extends Controller
     	KategoriArtikel::create($input);
     	return redirect(route('kategori_artikel.index'));
     }
+    public function edit($id){
+        $KategoriArtikel=KategoriArtikel::find($id);
+        return view('kategori_artikel.edit', compact('KategoriArtikel'));
+
+    }
+    public function update($id, Request $request){
+        $KategoriArtikel=KategoriArtikel::find($id);
+        $input=$request->all();
+
+    
+        $KategoriArtikel->update($input);
+
+        return redirect(route('kategori_artikel.index'));
+    }
+    public function destroy($id){
+        $KategoriArtikel = KategoriArtikel::find($id);
+
+        $KategoriArtikel->delete();
+
+        return redirect(route('kategori_artikel.index'));
+    }
 }

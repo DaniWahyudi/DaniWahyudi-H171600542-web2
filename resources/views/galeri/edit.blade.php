@@ -6,14 +6,14 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="card">
-				<div class="card-header">Galeri</div>
+				<div class="card-header"> galeri </div>
 					<div class="card-body">
-						{!!	Form::open(['route' => 'galeri.store', 'method' => 'post']) !!}
+						
+						{!! Form::model($Galeri,['route'=>['galeri.update',$Galeri->id],'method'=>'patch']) !!}
+						
 							@include('galeri.form')
 						{!! Form::close() !!}
 			
-						</form>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -21,7 +21,6 @@
 </div>
 
 @endsection
-
 @section('scripts')
 <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
 <script >

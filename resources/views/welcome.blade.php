@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    GUYON :) WATON
+                    DANI WAHYUDI
                 </div>
 
                 <div class="links">

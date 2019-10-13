@@ -29,4 +29,27 @@ class BeritaController extends Controller
         Berita::create($input);
         return redirect(route('berita.index'));
     }
+    public function destroy($id){
+        $Berita = Berita::find($id);
+
+        $Berita->delete();
+
+        return redirect(route('berita.index'));
+    }
+    public function edit($id){
+        $Berita=Berita::find($id);
+        $KategoriBerita=KategoriBerita::pluck('nama','id');
+        return view('berita.edit', compact('KategoriBerita','Berita'));
+
+    }
+    public function update($id, Request $request){
+        $Berita=Berita::find($id);
+        $input=$request->all();
+
+    
+        $Berita->update($input);
+
+        return redirect(route('berita.index'));
+    }
+
 }

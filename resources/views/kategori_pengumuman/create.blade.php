@@ -6,12 +6,12 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="card">
-				<div class="card-header">Kategori Pengumuman</div>
+				<div class="card-header">kategori pengumuman</div>
 					<div class="card-body">
-						<form method="POST" action="{!! route('kategori_pengumuman.store') !!}">
-							@include('kategori_pengumuman.form');
-						</form>
-					</div>
+						{!!	Form::open(['route' => 'kategori_pengumuman.store', 'method' => 'post']) !!}
+							@include('kategori_pengumuman.form')
+						{!! Form::close() !!}
+			
 				</div>
 			</div>
 		</div>

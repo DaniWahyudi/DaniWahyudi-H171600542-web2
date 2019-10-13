@@ -1,10 +1,11 @@
 @csrf
 
                         <div class="form-group row">
-                            <label for="nama" class="col-md-2 col-form-label text-md-right">{{ __('nama') }}</label>
+                            <label for="nama" class="col-md-2 col-form-label text-md-right">{{ __('Nama') }}</label>
 
                             <div class="col-md-10">
-                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus>
+                                
+                                {!! Form::text('nama',null,['class'=>"form-control",'required','autofocus']); !!}
 
                                 @error('nama')
                                     <span class="invalid-feedback" role="alert">
@@ -13,14 +14,14 @@
                                 @enderror
                             </div>
                         </div>
-                        
 
                         <div class="form-group row">
-                            <label for="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Galeri') }}</label>
+                            <label for="kategori_galeri_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori') }}</label>
                             <div class="col-md-10">
                             {!! Form::select('kategori_galeri_id',$KategoriGaleri,null,["class"=>"form-control","required"]); !!}
 
-                                @error('kategori_galeri_id')
+                                @error('kategori_galeri
+                                _id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -29,11 +30,26 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="keterangan" class="col-md-2 col-form-label text-md-right">{{ __('keterangan') }}</label>
+                            <label for="isi" class="col-md-2 col-form-label text-md-right">{{ __('isi') }}</label>
                             <div class="col-md-10">
-                            {!! Form::textarea('keterangan',null,["class"=>"form-control"]); !!}
+                            {!! Form::textarea('isi',null,["class"=>"form-control"]); !!}
 
-                                @error('keterangan')
+                                @error('isi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('path') }}</label>
+
+                            <div class="col-md-10">
+                                
+                                {!! Form::text('path',null,['class'=>"form-control",'required','autofocus']); !!}
+
+                                @error('path')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,7 +59,8 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="users_id" type="hidden" class="form-control @error('users_id') is-invalid @enderror" name="users_id" value="{{ Auth::id() }}" required autocomplete="users_id">
+                               
+                                 {!! Form::hidden ('users_id', Auth::id() ); !!}
 
                                 @error('users_id')
                                     <span class="invalid-feedback" role="alert">
@@ -60,6 +77,6 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <a href="{!! route('galeri.index') !!}" class="btn btn-danger">Batal</a>
+                                <a href="{!! route('artikel.index') !!}" class="btn btn-danger">Batal</a>
                             </div>
                         </div>

@@ -8,10 +8,10 @@
 			<div class="card">
 				<div class="card-header">kategori artikel</div>
 					<div class="card-body">
-						<form method="POST" action="{!! route('kategori_artikel.store') !!}">
-							@include('kategori_artikel.form');
-						</form>
-					</div>
+						{!!	Form::open(['route' => 'kategori_artikel.store', 'method' => 'post']) !!}
+							@include('kategori_artikel.form')
+						{!! Form::close() !!}
+			
 				</div>
 			</div>
 		</div>

@@ -20,6 +20,10 @@
 <label class="col-md-4 col-form-label text-md-left">{!! $Galeri->keterangan !!}</label>
 </div>
 <div class="from-group row ">
+<label class="col-md-4 col-form-label text-md-right">Path</label>
+<label class="col-md-4 col-form-label text-md-left">{!! $Galeri->path !!}</label>
+</div>
+<div class="from-group row ">
 <label class="col-md-4 col-form-label text-md-right">User id</label>
 <label class="col-md-4 col-form-label text-md-left">{!! $Galeri->users_id !!}</label>
 </div>

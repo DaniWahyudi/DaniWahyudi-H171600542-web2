@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -47,6 +47,7 @@
                                 <a class="dropdown-item" href="{{ route('berita.index') }}">{{ __('Berita') }}</a>
 
                                 <a class="dropdown-item" href="{{ route('galeri.index') }}">{{ __('Galeri') }}</a>
+                                
                                 <a class="dropdown-item" href="{{ route('pengumuman.index') }}">{{ __('Pengumuman') }}</a>
 
                                 <a class="dropdown-item" href="{{ route('kategori_berita.index') }}">{{ __('Kategori Berita') }}</a>
@@ -63,6 +64,7 @@
                             </li>
                                 
                         @endauth
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -102,17 +104,14 @@
         </nav>
 
         <main class="py-4">
-
             @yield('content')
         </main>
     </div>
-
-  <script
+<script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-      
-  </script>
-  @yield('scripts')
+  crossorigin="anonymous"></script>
+
+    @yield('scripts')
 </body>
 </html>

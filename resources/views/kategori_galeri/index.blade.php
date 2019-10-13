@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="card">
-				<div class="card-header"> kategori artikel </div>
+				<div class="card-header"> kategori galeri</div>
 					<div class="card-body">
 <a href="{!! route('kategori_galeri.create') !!}" class="btn btn-primary"> Tambah Data</a>
 	<table border="1"><tr>
@@ -22,7 +22,11 @@
 	<td>{!! $item->users_id !!}</td>
 	<td>{!! $item->created_at!!}</td>
 	<td>
-		<a href="{!! route('kategori_galeri.show',[$item->id])!!}" class="btn btn-sm btn-success">lihat </a></td>
+		<a href="{!! route('kategori_galeri.show',[$item->id])!!}" class="btn btn-sm btn-success">lihat </a>
+		<a href="{!! route('kategori_galeri.edit',[$item->id])!!}" class="btn btn-sm btn-danger">ubah</a>
+		{!! Form::open(['route'=>['kategori_galeri.destroy',$item->id],'method'=>'delete']) !!}
+		{!! Form::submit('Hapus',['class'=>"btn btn-sm btn-warning"]); !!}
+		{!! Form::close() !!}</td>
 </tr>
 @endforeach
 	</table>
